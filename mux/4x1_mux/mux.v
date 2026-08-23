@@ -1,0 +1,1 @@
+// build this 4x1 mux using 3 2x1 mux , divide 2 input in 2 mux and give their output as input in third mux.
