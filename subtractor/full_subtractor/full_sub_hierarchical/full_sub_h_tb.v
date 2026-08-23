@@ -1,61 +1,61 @@
-module full_adder_tb;
+module full_sub_h_tb;
     reg A;
     reg B;
-    reg Cin;
-    wire S;
-    wire Co;
+    reg Bin;
+    wire D;
+    wire Bo;
 
-    full_adder uut(
+    full_sub_h uut(
         .A(A),
         .B(B),
-        .Cin(Cin),
-        .S(S),
-        .Co(Co)
+        .Bin(Bin),
+        .D(D),
+        .Bo(Bo)
     );
 
     initial begin
-        $dumpfile("full_adder.vcd");
-        $dumpvars(0, full_adder_tb);
-        $monitor("A=%b ,B=%b, Cin=%b, S=%b,  Co=%b",A,B,Cin,S,Co);
-        
+        $dumpfile("full_sub_h.vcd");
+        $dumpvars(0, full_sub_h_tb);
+        $monitor("A=%b,B=%b,Bin=%b,D=%b,Bo=%b",A,B,Bin,D,Bo);
+
         A=0;
         B=0;
-        Cin=0;
+        Bin=0;
         #10;
 
         A=0;
         B=0;
-        Cin=1;
-        #10;
-
-        A=0;
-        B=1;
-        Cin=0;
+        Bin=1;
         #10;
 
         A=0;
         B=1;
-        Cin=1;
+        Bin=0;
+        #10;
+
+        A=0;
+        B=1;
+        Bin=1;
         #10;
 
         A=1;
         B=0;
-        Cin=0;
+        Bin=0;
         #10;
 
         A=1;
         B=0;
-        Cin=1;
+        Bin=1;
         #10;
 
         A=1;
         B=1;
-        Cin=0;
+        Bin=0;
         #10;
 
         A=1;
         B=1;
-        Cin=1;
+        Bin=1;
         #10;
         $finish;
     end
