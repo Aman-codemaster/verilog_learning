@@ -1,3 +1,5 @@
 *_sim
 a.out
 *.vcd
+.DS_Store
+
