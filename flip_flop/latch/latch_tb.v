@@ -10,25 +10,24 @@ module latch_tb();
         .Q(Q),
         .W(W)
     );
+    task test;
+        input r;
+        input s;
+
+        begin
+            R=r;
+            S=s;
+            #10;
+        end
+    endtask
 
     initial begin
 
         $monitor("R=%b,S=%b,Q=%b,W=%b",R,S,Q,W);
 
-        R= 1;
-        S=0 ;
-        #10;
-
-        R= 0;
-        S=0 ;
-        #10;
-
-        R= 0;
-        S= 1;
-        #10;
-
-        R= 0;
-        S= 0;
-        #10;
+        test(1,0);
+        test(0,0);
+        test(0,1);
+        test(0,0);
     end
 endmodule
