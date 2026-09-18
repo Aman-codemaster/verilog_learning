@@ -23,6 +23,11 @@ module sipo(
     wire Q1;
     wire Q0;
 
+    assign Q[3] = Q3;
+    assign Q[2] = Q2;
+    assign Q[1] = Q1;
+    assign Q[0] = Q0;
+
      dff2 d3(
         .clk(clk),
         .d(Din),
@@ -51,8 +56,5 @@ module sipo(
         .q(Q0)
     );
 
-    assign Q[3] = Q3;
-    assign Q[2] = Q2;
-    assign Q[1] = Q1;
-    assign Q[0] = Q0;
+
 endmodule
